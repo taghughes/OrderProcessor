@@ -1,22 +1,18 @@
 package org.khdOrderProcessing;
-
 import javax.imageio.ImageIO;
 import javax.imageio.ImageWriter;
 import javax.imageio.stream.ImageOutputStream;
-
 import java.awt.*;
 import java.awt.color.ColorSpace;
 import java.awt.color.ICC_Profile;
 import java.awt.font.TextAttribute;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
 import java.util.Iterator;
 import java.util.Map;
 
@@ -24,7 +20,6 @@ import java.util.Map;
 
 public class TextImageGenerator {
 
-    // Final configuration variables
     private static final int BOWL_IMAGE_WIDTH = 2700;
     private static final int BOWL_IMAGE_HEIGHT = 2700;
     private static final int PLATE_IMAGE_WIDTH = 3180;
@@ -35,36 +30,25 @@ public class TextImageGenerator {
     private static final int UTENSILS_IMAGE_HEIGHT = 993;
     private static final int PLACEMAT_IMAGE_WIDTH = 5400;
     private static final int PLACEMAT_IMAGE_HEIGHT = 7350;
-
     private static final int BOWL_DEFAULT_YOFFSET = 470;
     private static final int PLATE_DEFAULT_YOFFSET = 454;
     private static final int MUG_DEFAULT_YOFFSET = 160;
     private static final int PLACEMAT_DEFAULT_YOFFSET = -2673;
     private static final int MUG_DEFAULT_XOFFSET = -723;
-
     private static final Font fiddlestixOutline = loadFiddlestixOutline();
     private static final Font fiddlestixSolid = loadFiddlestixSolid();
-
     private static final int[] offsetsB = setBowlOffsets();
     private static final int[] offsetsP = setPlateOffsets();
     private static final int[] offsetsM = setMugOffsets();
     private static final int[] offsetsU = setUtensilsOffsets();
     private static final int[] offsetsPM = setPlacematOffsets();
-
     private static final String[] UtensilsColors = setUtensilsColor();
-
     private static final int TYPE_BOWL = 1;
     private static final int TYPE_PLATE = 2;
     private static final int TYPE_MUG = 3;
     private static final int TYPE_UTENSILS = 4;
     private static final int TYPE_PLACEMAT = 5;
-
-
-
-
-
     private static final Color TEXT_COLOR = new Color(0, 0, 0);
-
     private static final String BACKGROUND_FILE = "background.jpg";
 
 
@@ -147,7 +131,6 @@ public class TextImageGenerator {
                 metrics = g2d.getFontMetrics(textFont);
                 textWidth = metrics.stringWidth(name);
                 textHeight = metrics.getHeight();
-
             }
             // Center positioning
             int x = (int)(PLATE_IMAGE_WIDTH/2) - (int)(textWidth/2) + 10;
@@ -195,7 +178,6 @@ public class TextImageGenerator {
                 metrics = g2d.getFontMetrics(textFont);
                 textWidth = metrics.stringWidth(name);
                 textHeight = metrics.getHeight();
-
             }
 
             // Center positioning
@@ -245,10 +227,7 @@ public class TextImageGenerator {
                 metrics = g2d.getFontMetrics(textFont);
                 textWidth = metrics.stringWidth(name);
                 textHeight = metrics.getHeight();
-
             }
-
-
             // Center positioning
 
             int centerX = (UTENSILS_IMAGE_WIDTH - textHeight) / 2;
