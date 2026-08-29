@@ -1,1 +1,2 @@
 # OrderProcessor
+Built to be run on a DigitalOcean Linux VPS on a 12 hour timer. Uses Shopify API to regularly poll for new orders, configured in orderID.txt. Parses JSON with Jackson and calls methods according to the SKUs of orders. Generates personalized .jpg product files with appropriate metadata to be hosted on linux VPS with nginx, allowing the print-on-demand service to access the files through orderdesk with minimal time required to process orders.
